@@ -14,6 +14,10 @@ app.use(
   })
 );
 
+app.get("/",(req,res)=>{
+res.send("hello people !");
+});
+
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
   const Present = await UsersModel.findOne({ email });
