@@ -1,7 +1,7 @@
 const express = require("express");
 const connect = require("./config/db");
 const jwt = require("jsonwebtoken");
-const { UsersModel } = require(`../models/user.model`);
+const { UsersModel } = require(`./modals/User.model`);
 const cors = require("cors");
 const app = express();
 
