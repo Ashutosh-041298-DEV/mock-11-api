@@ -62,22 +62,23 @@ app.post("/signin", async (req, res) => {
 });
 
 app.post("/bmicalc", async(req,res)=>{
-  const {height, weight, username} = req.body;
+  const {height, weight, username,email} = req.body;
   const height_in_mtr = Number(height)/100
   const Bmi = Number(weight)/(height_in_mtr)**2
   const new_bmi = new BmiModel({
     Bmi,
     height: height_in_mtr,
     weight,
-    username
+    username,
+    email
   })
   await new_bmi.save()
   res.send({Bmi})
 })
 
 app.get("/profilebmi",async (req, res) => {
-  const username = req.query.username;
-  const bmi=await BmiModel.find({username: username})||0;
+  const {username,email} = req.query;
+  const bmi=await BmiModel.find({username: username,email})||0;
   res.send(bmi);
 })
 

@@ -4,7 +4,8 @@ const BmiSchema=mongoose.Schema({
     Bmi:Number,
     height:Number,
     weight:Number,
-    username:String
+    username:String,
+    email:String
 
 })
 
