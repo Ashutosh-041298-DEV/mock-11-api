@@ -1,7 +1,6 @@
 const express = require("express");
 const connect = require("./config/db");
 const bcrypt= require("bcrypt");
-const bcrypt= require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { UsersModel } = require(`./modals/User.model`);
 const {BmiModel} =require("./modals/Bmi.model.js")
